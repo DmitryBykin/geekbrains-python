@@ -2,20 +2,19 @@
 # 3. Пользователь вводит месяц в виде целого числа от 1 до 12. Сообщить к какому времени года относится месяц
 # (зима, весна, лето, осень). Напишите решения через list и через dict.
 
-seasons = {'зима': (1, 2, 12), 'весна': (3, 4, 5), 'лето': (6, 7, 8), 'осень': (9, 10, 11)}
+seasons = {(1, 2, 12): 'зима', (3, 4, 5): 'весна', (6, 7, 8): 'лето', (9, 10, 11): 'осень'}
 
-month_num = 0
-while month_num < 1 or month_num > 12:
-    month_num = int(input('Введите месяц в виде числа от 1 до 12: '))
+month = 0
+while month < 1 or month > 12:
+    month = int(input('Введите месяц в виде числа от 1 до 12: '))
 
 # вариант 1
 print('Вариант 1')
-for key, value in seasons.items():
-    if month_num in value:
-        print(f'Время года - {key}\n')
+for months, season in seasons.items():
+    if month in months:
+        print(f'Время года - {season}\n')
 
 # вариант 2
 print('Вариант 2')
 seasons = ['зима', 'весна', 'лето', 'осень', 'зима']
-print(f'Время года - {seasons[month_num//3]}')
-
+print(f'Время года - {seasons[month // 3]}')

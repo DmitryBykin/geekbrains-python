@@ -7,14 +7,17 @@
 # Пользователь ввел число 8. Результат: 8, 7, 5, 3, 3, 2.
 # Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
-my_list = [7, 5, 3, 3, 2]
+
+raiting_list = [11, 7, 5, 3, 3, 2, 0]
 raiting_value = int(input('Введите значение рейтинга: '))
-for ind, item in enumerate(my_list):
+
+for ind, item in enumerate(raiting_list):
     if raiting_value >= item:
-        my_list.insert(ind, raiting_value)
+        raiting_list.insert(ind, raiting_value)
         break
-    elif ind == (len(my_list) - 1):
-        my_list.insert(ind+1, raiting_value)
+    elif ind == (len(raiting_list) - 1):
+        raiting_list.insert(ind + 1, raiting_value)
         break
 
-print(my_list)
+print('Новый рейтинг:')
+print(raiting_list)
